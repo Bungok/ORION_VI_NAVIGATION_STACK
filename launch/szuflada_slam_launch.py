@@ -5,6 +5,7 @@ from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 
+from launch_ros.substitutions import FindPackageShare
 from ament_index_python.packages import get_package_share_directory
 import os
 
@@ -36,7 +37,7 @@ def generate_launch_description():
 		('rgb/camera_info', '/camera/color/camera_info'),
 		('depth/image', '/camera/aligned_depth_to_color/image_raw')]
 		
-	return LaunchDescription(
+	ld = LaunchDescription(
 		[
 		
 			# SetParameter(name='unite_imu_method')
@@ -99,4 +100,19 @@ def generate_launch_description():
     		# )
 
 		]
+
+		nav2_bringup_launch = IncludeLaunchDescription(
+			PythonLaunchDescriptionSource(
+				#można to zrobić ładniej
+				os.path.join(FindPackageShare(package='nav2_bringup').find('nav2_bringup'),'launch','bringup_launch.py')
+
+				launch_arguments={
+					#tmp
+				}
+			)
+		)
+
+		ld.add_action(nav2_bringup_launch)
+
+		return ld
 	)
