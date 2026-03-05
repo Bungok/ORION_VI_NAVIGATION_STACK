@@ -78,13 +78,21 @@ def generate_launch_description():
                          'publish_tf':False}],
             remappings=[('imu/data_raw', '/camera/imu')]),
 
-			Node(
-				package='szuflada_pkg',
-				namespace='szuflada',
-				executable='slam_node',
-				name='szuflada',
-				arguments=['']
-				)
+			# Node(
+			# 	package='szuflada_pkg',
+			# 	namespace='szuflada',
+			# 	executable='slam_node',
+			# 	name='szuflada',
+			# 	arguments=['']
+			# 	)
+			IncludeLaunchDescription(
+				PythonLaunchDescriptionSource([os.path.join(
+					get_package_share_directory('orion_vi_bringup_pkg'), 'launch'),
+					'/bringup_launch.py']),
+					launch_arguments={'use_sim_time': 'false'
+										}.items(),
+				),
+
 			#
 			# PÓKI NIE MAMY MACIERZY TO WYWALAMY EKF
 			# I UŻYWAMY ODOM ZE SLAMU
