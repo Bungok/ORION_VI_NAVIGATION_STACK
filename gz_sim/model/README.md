@@ -11,3 +11,8 @@ or:
 ```
 gz sim rover_model.urdf
 ```
+
+Aby zobaczyć topiki stworzone w symulacji:
+```
+gz topic -l
+```gz

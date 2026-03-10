@@ -11,7 +11,7 @@
 - [x] Wifi na szufladzie
 - [ ] ~~zamienić .e57 na jakiś normalny format~~
 - [ ] Nav2 i jego pluginy
-  - [ ] bringup
+  - [x] bringup
 - [ ] Gazebo
   - [ ] TFy
   - [ ] UDRF i SDF do symulacji 

@@ -200,7 +200,7 @@ planner_server:
 local_costmap:
   local_costmap:
     ros__parameters:
-      use_sim_time: false
+      use_sim_time: false #TODO 
       global_frame: odom
       robot_base_frame: base_link
       update_frequency: 5.0
