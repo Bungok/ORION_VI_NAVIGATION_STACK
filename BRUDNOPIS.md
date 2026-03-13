@@ -90,6 +90,9 @@ https://github.com/sdformat-editor/sdformat-editor
 esp szuflada ip: ping 192.168.1.50 
 
 rasberrka ip:  ping 192.168.1.1
+użytkownik: `test1`
+hasło: `123`
+
 
 router stół ip: ping 192.168.1.101
 
